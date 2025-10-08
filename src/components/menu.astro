@@ -1,0 +1,28 @@
+---
+import type { MenuItem } from "../types/menu";
+
+const { menu } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+type EnhancedMenuItem = MenuItem & { isActive: boolean };
+
+function markActive(items: MenuItem[]): EnhancedMenuItem[] {
+  return items.map((item) => ({
+    ...item,
+    isActive: currentPath === item.href,
+  }));
+}
+
+const enhancedMenu: EnhancedMenuItem[] = markActive(menu);
+---
+
+{
+  (enhancedMenu as EnhancedMenuItem[]).map((item) => (
+    <li class={`nav-item${item.isActive ? " active" : ""}`}>
+      <a href={item.href} class="nav-link">
+        {item.label}
+      </a>
+    </li>
+  ))
+}

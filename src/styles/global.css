@@ -1,0 +1,87 @@
+/* Global.css that loads site wide */
+
+body {
+  font-family: "Poppins", sans-serif !important;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+footer {
+  background-color: #232128;
+  color: #ffffff;
+  padding: 150px 150px 25px 150px;
+}
+footer h4 {
+  color: #ffffff;
+}
+footer ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+footer ul li a {
+  color: #f3f3f3;
+  text-decoration: none;
+}
+footer ul li a:hover {
+  color: #f3f3f3;
+  text-decoration: underline;
+}
+.footer-padding {
+  padding: 100px 0 100px 0;
+}
+.footer-border-top {
+  border-top: #f3f3f3 1px solid;
+}
+.footer-divider {
+  height: 1px;
+  background: rgba(243, 243, 243, 0.1);
+}
+.social-stuff,
+.copyright {
+  padding-top: 25px;
+}
+.social-stuff ul {
+  padding-left: 0;
+}
+.social-stuff ul li {
+  display: inline;
+}
+.main-page header {
+  padding-top: 100px;
+  height: 500px;
+  background-color: #232128;
+  color: #ffffff;
+}
+.sub-page header {
+  padding-top: 100px;
+  height: 200px;
+  background-color: #232128;
+  color: #ffffff;
+}
+.navbar {
+  height: 100px;
+  background: #ffffff;
+}
+.navbar-brand {
+  color: #000000;
+}
+.nav-link {
+  border-radius: 20px;
+  color: #000000;
+}
+.nav-item .active {
+  background: #000000;
+  color: #ffffff;
+  border-radius: 20px;
+}
+.nav-link:hover {
+  background: #000000;
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+#navbarNav ul li {
+  margin-left: 2px;
+}
