@@ -1,6 +1,36 @@
 ---
+import Menu from "../components/menu.astro";
+import { footerMenu } from "../data/menu";
+import { SITE_NAME } from "../data/site";
 
+const currentYear = new Date().getFullYear();
 ---
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
-></script>
+<footer class="border-top">
+  <div class="container py-5">
+    <div class="row align-items-start">
+      <div class="col-xxl-6 mb-6">
+        <div class="footer-site-info">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus gravida vehicula dolor, vel feugiat mauris viverra et. Nullam odio ligula, venenatis id lacus sit amet, vulputate mollis magna.</p>
+        </div>
+      </div>
+      <div class="col-4"></div>
+      <div class="col-xxl-2 mb-6">
+        <h6 class="fw-semibold mb-3 mt-4 mt-md-0">Quick Link</h6>
+        <div class="footer-nav">
+          <nav class="navbar">
+            <ul>
+              <Menu menu={footerMenu} />
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <hr class="my-5 border-secondary" />
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="text-secondary">© {currentYear} {SITE_NAME}. All rights reserved.</div>
+      </div>
+    </div>
+  </div>
+</footer>

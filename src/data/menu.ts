@@ -6,6 +6,7 @@ export const headerMenu: MenuItem[] = [
   { label: "Services", href: "/services" },
   { label: "Test", href: "/test" },
   { label: "Contact", href: "/contact" },
+  { label: "Cheat Sheet", href: "/cheatsheet" },
 ];
 
 export const footerMenu: MenuItem[] = [
@@ -14,6 +15,7 @@ export const footerMenu: MenuItem[] = [
   { label: "Services", href: "/services" },
   { label: "Test", href: "/test" },
   { label: "Contact", href: "/contact" },
+  { label: "Cheat Sheet", href: "/cheatsheet" },
 ];
 
 // Add other menus here if needed

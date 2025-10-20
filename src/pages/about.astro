@@ -1,51 +1,20 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import InnerHero from "../components/sections/InnerHero.astro";
-const innerTitle = "About Us";
-
-const pageTitle = "About Us - Your Company Name";
-const pageDescription = "Learn more about Your Company Name, our mission, vision, and the team driving innovation.";
-const pageImage = "/images/about-page-og.jpg"; // Replace with your actual social share image URL
+// /src/pages/about.astro
+import InnerPageLayout from "../layouts/InnerPageLayout.astro";
+import { PAGE_TITLES, PAGE_DESCRIPTIONS, HERO_TITLES, PAGE_OG_IMAGES, DEFAULT_OG_IMAGE } from "../data/site";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={pageTitle} description={pageDescription} image={pageImage} />
-  </head>
-  <body>
-    <Header />
-    <InnerHero title={innerTitle} />
-    <!-- <Layout> -->
-    <div class="container">
-      <h1>About</h1>
-      <section>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id quam sit amet augue mollis sollicitudin. Maecenas maximus quis est ut feugiat. Ut rhoncus est in diam posuere, eu dignissim
-          purus ullamcorper. Nunc odio metus, efficitur et augue non, rhoncus bibendum nulla. Donec purus lacus, tempor at egestas vel, posuere non mi. Curabitur egestas vestibulum convallis. Proin et
-          turpis sollicitudin, feugiat ex ac, blandit lorem. In fermentum augue ante, a ornare sem mollis ac. Vivamus consequat vehicula leo. Aliquam in elit vel tellus posuere finibus. Aenean
-          vulputate metus vitae elit blandit dapibus. Proin magna tortor, sollicitudin tempus risus at, dignissim dapibus libero. Sed lobortis, neque quis sagittis porttitor, ipsum ex sagittis felis,
-          congue dapibus mi ex vitae risus. In pharetra metus quis nisl eleifend congue. Suspendisse at bibendum odio. Duis rutrum tristique velit, ut fringilla nisl faucibus in. Fusce varius placerat
-          sem, quis gravida justo faucibus ut. Aenean id consequat lacus, id mattis sapien. Vivamus dictum dapibus tincidunt. Morbi dui sem, tincidunt sit amet sollicitudin eleifend, lacinia a justo.
-          Nullam lacinia eleifend dui in suscipit. Cras non hendrerit ante, scelerisque euismod lectus. Mauris et facilisis libero. Maecenas ut elit id nulla pulvinar iaculis at vel risus. Fusce
-          accumsan nibh vitae quam gravida bibendum. Duis porttitor, metus molestie ultricies venenatis, sapien velit dapibus turpis, non consectetur nisi mi in enim. Pellentesque tincidunt quam
-          risus. Nullam tempor nulla nunc, sit amet cursus est suscipit tincidunt. Nullam hendrerit egestas tempus. Duis vulputate lorem eu metus aliquet, in vestibulum ipsum interdum. Morbi id augue
-          felis. In finibus pulvinar arcu eu luctus. Morbi faucibus vestibulum magna, in placerat ante ultrices sed. Maecenas ac elit ac erat egestas interdum ut quis elit. Fusce tristique elit sed
-          lectus dignissim vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc ex lacus, placerat at quam in, cursus hendrerit massa. Praesent
-          hendrerit diam id ultrices scelerisque. Maecenas eleifend id sapien in dictum. Integer porttitor mi quis libero aliquam lacinia. Donec a faucibus quam. Morbi bibendum, ex quis venenatis
-          euismod, diam urna ultricies leo, vitae tincidunt dui nunc eget diam. Fusce vitae tristique turpis. Nunc ipsum lectus, malesuada nec venenatis non, tincidunt id orci. Donec vitae
-          sollicitudin dui. Mauris facilisis felis a commodo convallis. Sed tristique lobortis velit id efficitur. Nunc commodo nulla a dignissim convallis. Mauris mauris lectus, dapibus a dui vel,
-          venenatis dignissim justo. Aliquam consectetur fringilla justo, ut elementum nisi eleifend eget. Curabitur nec dolor eu turpis aliquam pulvinar sed ac nulla. Aliquam ultricies et elit eget
-          suscipit. Phasellus venenatis massa sit amet justo auctor, sed euismod justo tempus. Vestibulum eu venenatis erat. Morbi dictum felis non aliquam pretium. Curabitur in metus ut orci
-          tincidunt ornare. Sed aliquet, lectus et hendrerit ultrices, risus nisl pellentesque justo, suscipit scelerisque lorem erat nec elit. Aenean ante purus, malesuada euismod mattis a, pulvinar
-          a elit. Vivamus vehicula ultricies ex, vel auctor dolor elementum vel. Vestibulum mauris sapien, rhoncus sit amet turpis sit amet, lobortis rutrum libero. Quisque tincidunt egestas
-          tristique. Pellentesque a lectus turpis. In hac habitasse platea dictumst. Fusce pellentesque arcu nec nis
-        </p>
-      </section>
-      <!-- </Layout> -->
-    </div>
-    <Footer />
-  </body>
-</html>
+<InnerPageLayout pageTitle={PAGE_TITLES.about} pageDescription={PAGE_DESCRIPTIONS.about} pageImage={PAGE_OG_IMAGES.about || DEFAULT_OG_IMAGE} innerTitle={HERO_TITLES.about}>
+  <!-- <Layout> -->
+  <div class="container">
+    <h1>About</h1>
+    <section>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id quam sit amet augue mollis sollicitudin. Maecenas maximus quis est ut feugiat. Ut rhoncus est in diam posuere, eu dignissim purus ullamcorper. Nunc odio metus, efficitur et augue non, rhoncus bibendum nulla. Donec purus lacus, tempor at egestas vel, posuere non mi. Curabitur egestas vestibulum convallis. Proin et turpis sollicitudin, feugiat ex ac, blandit lorem. In fermentum augue ante, a ornare sem mollis ac. Vivamus consequat vehicula leo. Aliquam in elit vel tellus posuere finibus. Aenean vulputate metus vitae elit blandit dapibus. Proin magna tortor, sollicitudin tempus risus at, dignissim dapibus libero. Sed lobortis, neque quis sagittis porttitor, ipsum ex sagittis felis, congue dapibus mi ex vitae risus. In pharetra metus quis nisl eleifend congue. Suspendisse at bibendum odio. Duis rutrum tristique velit, ut fringilla nisl faucibus in. Fusce varius placerat sem, quis gravida justo faucibus ut. Aenean id consequat lacus, id mattis sapien. Vivamus dictum dapibus tincidunt. Morbi dui sem, tincidunt sit amet sollicitudin eleifend, lacinia a justo. Nullam lacinia eleifend dui in suscipit. Cras non
+        hendrerit ante, scelerisque euismod lectus. Mauris et facilisis libero. Maecenas ut elit id nulla pulvinar iaculis at vel risus. Fusce accumsan nibh vitae quam gravida bibendum. Duis porttitor, metus molestie ultricies venenatis, sapien velit dapibus turpis, non consectetur nisi mi in enim. Pellentesque tincidunt quam risus. Nullam tempor nulla nunc, sit amet cursus est suscipit tincidunt. Nullam hendrerit egestas tempus. Duis vulputate lorem eu metus aliquet, in vestibulum ipsum interdum. Morbi id augue felis. In finibus pulvinar arcu eu luctus. Morbi faucibus vestibulum magna, in placerat ante ultrices sed. Maecenas ac elit ac erat egestas interdum ut quis elit. Fusce tristique elit sed lectus dignissim vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc ex lacus, placerat at quam in, cursus hendrerit massa. Praesent hendrerit diam id ultrices scelerisque. Maecenas eleifend id sapien in dictum. Integer porttitor mi quis libero aliquam lacinia. Donec a faucibus quam. Morbi bibendum, ex quis venenatis euismod, diam urna ultricies leo, vitae tincidunt dui nunc eget diam. Fusce vitae tristique turpis. Nunc ipsum
+        lectus, malesuada nec venenatis non, tincidunt id orci. Donec vitae sollicitudin dui. Mauris facilisis felis a commodo convallis. Sed tristique lobortis velit id efficitur. Nunc commodo nulla a dignissim convallis. Mauris mauris lectus, dapibus a dui vel, venenatis dignissim justo. Aliquam consectetur fringilla justo, ut elementum nisi eleifend eget. Curabitur nec dolor eu turpis aliquam pulvinar sed ac nulla. Aliquam ultricies et elit eget suscipit. Phasellus venenatis massa sit amet justo auctor, sed euismod justo tempus. Vestibulum eu venenatis erat. Morbi dictum felis non aliquam pretium. Curabitur in metus ut orci tincidunt ornare. Sed aliquet, lectus et hendrerit ultrices, risus nisl pellentesque justo, suscipit scelerisque lorem erat nec elit. Aenean ante purus, malesuada euismod mattis a, pulvinar a elit. Vivamus vehicula ultricies ex, vel auctor dolor elementum vel. Vestibulum mauris sapien, rhoncus sit amet turpis sit amet, lobortis rutrum libero. Quisque tincidunt egestas tristique. Pellentesque a lectus turpis. In hac habitasse platea dictumst. Fusce pellentesque arcu nec nis
+      </p>
+    </section>
+    <!-- </Layout> -->
+  </div>
+</InnerPageLayout>
