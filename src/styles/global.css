@@ -38,12 +38,12 @@
 .main-navbar #navbarNav ul li {
   margin-left: 2px;
 }
-/* ---------------------------------- /*
+/* ---------------------------------- */
 
 /* Footer Styles */
 
 footer {
-  color:#000000
+  color: #000000;
 }
 .footer-nav a {
   color: blue;
@@ -59,4 +59,4 @@ footer {
   padding-left: 0;
   margin: 0;
 }
-/* ---------------------------------- /*
+/* ---------------------------------- */
