@@ -22,6 +22,7 @@ export const PAGE_TITLES = {
   about: `About Us - ${SITE_NAME}`,
   services: `Our Services - ${SITE_NAME}`,
   blog: `ODSP Blog & Updates - ${SITE_NAME}`,
+  search: `Search - ${SITE_NAME}`,
   contact: `Contact Us - ${SITE_NAME}`,
   cheatsheet: `Bootstrap Cheatsheet - ${SITE_NAME}`,
 } as const;
@@ -35,6 +36,7 @@ export const PAGE_DESCRIPTIONS = {
   services: "Explore our ODSP resources including eligibility guides, application assistance, benefits information, and support services for program recipients.",
   contact: "Get in touch with the ODSP Info team. We're here to answer your questions about the Ontario Disability Support Program and help you navigate the system.",
   blog: "Stay informed with the latest ODSP updates, policy changes, eligibility information, and helpful resources for Ontario Disability Support Program recipients.",
+  search: "Search for ODSP information, resources, eligibility requirements, benefits, and application guides.",
   cheatsheet: "Bootstrap component reference and examples.",
 } as const;
 

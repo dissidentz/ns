@@ -1,0 +1,44 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import InnerHero from "../components/sections/InnerHero.astro";
+import SearchComponent from "../components/Search.astro";
+import { SITE_NAME } from "../data/site";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Search - ${SITE_NAME}`} description="Search for ODSP information, resources, eligibility requirements, benefits, and more on ODSP Info." />
+  </head>
+  <body>
+    <Header />
+    <InnerHero title="Search ODSP Resources" />
+
+    <main id="main-content" class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="mb-4">
+            <p class="lead text-center text-muted">Search for ODSP eligibility, benefits, application guides, and more</p>
+          </div>
+
+          <SearchComponent />
+
+          <div class="mt-5">
+            <h2 class="h5 mb-3">Popular Searches:</h2>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="/search?q=eligibility" class="badge bg-secondary text-decoration-none px-3 py-2"> Eligibility </a>
+              <a href="/search?q=benefits" class="badge bg-secondary text-decoration-none px-3 py-2"> Benefits </a>
+              <a href="/search?q=application" class="badge bg-secondary text-decoration-none px-3 py-2"> Application </a>
+              <a href="/search?q=payment" class="badge bg-secondary text-decoration-none px-3 py-2"> Payment </a>
+              <a href="/search?q=appeal" class="badge bg-secondary text-decoration-none px-3 py-2"> Appeal </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,5 +15,8 @@
     "astro-breadcrumbs": "^3.3.1",
     "bootstrap": "^5.3.8",
     "sass": "^1.93.2"
+  },
+  "devDependencies": {
+    "pagefind": "^1.4.0"
   }
 }
