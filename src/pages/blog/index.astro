@@ -1,0 +1,148 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import InnerHero from "../../components/sections/InnerHero.astro";
+import { SITE_NAME } from "../../data/site";
+
+// Get all blog posts, filter out drafts, sort by date (newest first)
+const allPosts = await getCollection("blog", ({ data }: CollectionEntry<"blog">) => {
+  return data.draft !== true;
+});
+
+const sortedPosts = allPosts.sort((a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Get unique tags from all posts
+const allTags = [...new Set(sortedPosts.flatMap((post: CollectionEntry<"blog">) => post.data.tags))];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`ODSP Updates & Resources - ${SITE_NAME}`} description="Stay informed about ODSP updates, policy changes, eligibility information, and helpful resources for Ontario Disability Support Program recipients." />
+  </head>
+  <body>
+    <Header />
+    <InnerHero title="ODSP Blog & Updates" />
+
+    <main id="main-content" class="container py-5">
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8">
+          {
+            sortedPosts.length === 0 ? (
+              <div class="alert alert-info">
+                <i class="bi bi-info-circle me-2" />
+                No blog posts yet. Check back soon for ODSP updates and resources!
+              </div>
+            ) : (
+              <div class="row g-4">
+                {sortedPosts.map((post: CollectionEntry<"blog">) => (
+                  <div class="col-12">
+                    <article class="card h-100 shadow-sm">
+                      {post.data.image && <img src={post.data.image} class="card-img-top" alt={post.data.title} loading="lazy" />}
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                          <small class="text-muted">
+                            <i class="bi bi-calendar3 me-1" />
+                            {post.data.pubDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+                          </small>
+                          <small class="text-muted">
+                            <i class="bi bi-person-circle me-1" />
+                            {post.data.author}
+                          </small>
+                        </div>
+
+                        <h2 class="h4 card-title">
+                          <a href={`/blog/${post.slug}`} class="text-decoration-none text-dark">
+                            {post.data.title}
+                          </a>
+                        </h2>
+
+                        <p class="card-text text-muted">{post.data.description}</p>
+
+                        {post.data.tags && post.data.tags.length > 0 && (
+                          <div class="mb-3">
+                            {post.data.tags.map((tag: string) => (
+                              <a href={`/blog/tags/${tag}`} class="badge bg-primary text-decoration-none me-2">
+                                {tag}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+
+                        <a href={`/blog/${post.slug}`} class="btn btn-primary">
+                          Read More
+                          <i class="bi bi-arrow-right ms-2" />
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                ))}
+              </div>
+            )
+          }
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <!-- About Section -->
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">About This Blog</h3>
+              <p class="card-text small">Stay up-to-date with the latest ODSP information, policy changes, helpful resources, and guidance for navigating the Ontario Disability Support Program.</p>
+            </div>
+          </div>
+
+          <!-- Tags Cloud -->
+          {
+            allTags.length > 0 && (
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h3 class="h5 card-title">Topics</h3>
+                  <div class="d-flex flex-wrap gap-2">
+                    {allTags.map((tag) => (
+                      <a href={`/blog/tags/${tag}`} class="badge bg-secondary text-decoration-none">
+                        {tag}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )
+          }
+
+          <!-- Quick Links -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">Quick Links</h3>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2">
+                  <a href="/services" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    ODSP Services
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/about" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    About ODSP Info
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/contact" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

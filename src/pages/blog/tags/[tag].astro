@@ -1,0 +1,89 @@
+---
+import { getCollection } from "astro:content";
+import BaseHead from "../../../components/BaseHead.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import InnerHero from "../../../components/sections/InnerHero.astro";
+import { SITE_NAME } from "../../../data/site";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog", ({ data }) => {
+    return data.draft !== true;
+  });
+
+  // Get all unique tags
+  const uniqueTags = [...new Set(allPosts.flatMap((post) => post.data.tags))];
+
+  // Create a page for each tag
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag)).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+    return {
+      params: { tag },
+      props: { posts: filteredPosts, tag },
+    };
+  });
+}
+
+const { posts, tag } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Posts tagged "${tag}" - ${SITE_NAME}`} description={`All ODSP blog posts tagged with ${tag}`} />
+  </head>
+  <body>
+    <Header />
+    <InnerHero title={`Tag: ${tag}`} />
+
+    <main id="main-content" class="container py-5">
+      <div class="mb-4">
+        <a href="/blog" class="btn btn-outline-primary">
+          <i class="bi bi-arrow-left me-2"></i>
+          Back to All Posts
+        </a>
+      </div>
+
+      <div class="row g-4">
+        {
+          posts.map((post) => {
+            const formattedDate = new Date(post.data.pubDate).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            });
+
+            return (
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100 shadow-sm">
+                  {post.data.image && <img src={post.data.image} class="card-img-top" alt={post.data.title} loading="lazy" />}
+                  <div class="card-body d-flex flex-column">
+                    <small class="text-muted mb-2">
+                      <i class="bi bi-calendar3 me-1" />
+                      {formattedDate}
+                    </small>
+
+                    <h2 class="h5 card-title">
+                      <a href={`/blog/${post.slug}`} class="text-decoration-none text-dark">
+                        {post.data.title}
+                      </a>
+                    </h2>
+
+                    <p class="card-text text-muted flex-grow-1">{post.data.description}</p>
+
+                    <a href={`/blog/${post.slug}`} class="btn btn-sm btn-primary mt-auto">
+                      Read More
+                    </a>
+                  </div>
+                </article>
+              </div>
+            );
+          })
+        }
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

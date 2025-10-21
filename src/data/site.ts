@@ -21,8 +21,8 @@ export const PAGE_TITLES = {
   home: `Ontario Disability Support Program Resources - ${SITE_NAME}`,
   about: `About Us - ${SITE_NAME}`,
   services: `Our Services - ${SITE_NAME}`,
+  blog: `ODSP Blog & Updates - ${SITE_NAME}`,
   contact: `Contact Us - ${SITE_NAME}`,
-  test: `Test Page - ${SITE_NAME}`,
   cheatsheet: `Bootstrap Cheatsheet - ${SITE_NAME}`,
 } as const;
 
@@ -34,7 +34,7 @@ export const PAGE_DESCRIPTIONS = {
   about: "Learn about ODSP Info's mission to support ODSP recipients with accurate information, resources, and guidance for navigating the Ontario Disability Support Program.",
   services: "Explore our ODSP resources including eligibility guides, application assistance, benefits information, and support services for program recipients.",
   contact: "Get in touch with the ODSP Info team. We're here to answer your questions about the Ontario Disability Support Program and help you navigate the system.",
-  test: "Test page for development purposes.",
+  blog: "Stay informed with the latest ODSP updates, policy changes, eligibility information, and helpful resources for Ontario Disability Support Program recipients.",
   cheatsheet: "Bootstrap component reference and examples.",
 } as const;
 
@@ -45,7 +45,7 @@ export const HERO_TITLES = {
   about: "About Us",
   services: "Our Services",
   contact: "Contact Us",
-  test: "Test Page",
+  blog: "ODSP Blog & Updates",
   cheatsheet: "Bootstrap Cheatsheet",
 } as const;
 
@@ -57,6 +57,5 @@ export const PAGE_OG_IMAGES = {
   about: "/images/about-og.jpg",
   services: "/images/services-og.jpg",
   contact: "/images/contact-og.jpg",
-  test: "/images/test-og.jpg",
   cheatsheet: "/images/cheatsheet-og.jpg",
 } as const;
