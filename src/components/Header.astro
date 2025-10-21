@@ -5,13 +5,16 @@ import { SITE_NAME } from "../data/site";
 ---
 
 <div class="main-navbar">
-  <nav class="navbar navbar-expand-lg fixed-top">
+  <!-- Skip to main content link (for accessibility) -->
+  <a href="#main-content" class="skip-link visually-hidden-focusable"> Skip to main content </a>
+
+  <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
     <div class="container">
       <!-- Brand/Logo -->
       <a class="navbar-brand" href="/">{SITE_NAME}</a>
 
       <!-- Toggler -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation menu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -24,3 +27,39 @@ import { SITE_NAME } from "../data/site";
     </div>
   </nav>
 </div>
+
+<style>
+  /* Skip link styling - only visible when focused */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--bs-primary, #0d6efd);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+    z-index: 9999;
+    font-weight: 600;
+    transition: top 0.2s ease-in-out;
+  }
+
+  .skip-link:focus {
+    top: 0;
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+
+  /* Ensure Bootstrap's visually-hidden-focusable works */
+  .visually-hidden-focusable:not(:focus):not(:focus-within) {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+</style>

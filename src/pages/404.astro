@@ -1,0 +1,78 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_NAME } from "../data/site";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Page Not Found - ${SITE_NAME}`} description="The page you're looking for could not be found. Return to the homepage or use the navigation to find what you need." />
+  </head>
+  <body>
+    <Header />
+
+    <main id="main-content" class="container py-5">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-6">
+          <h1 class="display-1 fw-bold text-primary">404</h1>
+          <h2 class="mb-4">Page Not Found</h2>
+          <p class="lead mb-4">Sorry, we couldn't find the ODSP resource you're looking for. The page may have been moved or removed.</p>
+
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="/" class="btn btn-primary btn-lg">
+              <i class="bi bi-house-door-fill me-2"></i>
+              Return to Home
+            </a>
+            <a href="/about" class="btn btn-outline-primary btn-lg">
+              <i class="bi bi-info-circle me-2"></i>
+              About ODSP Info
+            </a>
+          </div>
+
+          <hr class="my-5" />
+
+          <div class="text-start">
+            <h3 class="h5 mb-3">Popular ODSP Resources:</h3>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="/services" class="text-decoration-none">
+                  <i class="bi bi-arrow-right-circle me-2"></i>
+                  ODSP Services & Support
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="/contact" class="text-decoration-none">
+                  <i class="bi bi-arrow-right-circle me-2"></i>
+                  Contact Us
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="/" class="text-decoration-none">
+                  <i class="bi bi-arrow-right-circle me-2"></i>
+                  ODSP Eligibility Information
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .display-1 {
+    font-size: 8rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 768px) {
+    .display-1 {
+      font-size: 6rem;
+    }
+  }
+</style>

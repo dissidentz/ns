@@ -2,100 +2,177 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Welcome from "../components/Welcome.astro";
 import HeroSection from "../components/sections/Hero.astro";
-
-const pageTitle = "About Us - Your Company Name";
-const pageDescription = "Learn more about Your Company Name, our mission, vision, and the team driving innovation.";
-const pageImage = "/images/about-page-og.jpg"; // Replace with your actual social share image URL
+import { PAGE_TITLES, PAGE_DESCRIPTIONS, PAGE_OG_IMAGES, DEFAULT_OG_IMAGE } from "../data/site";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={pageTitle} description={pageDescription} image={pageImage} />
+    <BaseHead title={PAGE_TITLES.home} description={PAGE_DESCRIPTIONS.home} image={PAGE_OG_IMAGES.home || DEFAULT_OG_IMAGE} />
   </head>
   <body>
     <Header />
     <HeroSection />
 
-    <main>
-      <h1 class="visually-hidden">Features examples</h1>
+    <main id="main-content">
+      <h1 class="visually-hidden">ODSP Resources and Information</h1>
+
+      <!-- Columns with icons -->
       <div class="container px-4 py-5" id="featured-3">
-        <h2 class="pb-2 border-bottom">Columns with icons</h2>
+        <h2 class="pb-2 border-bottom">Key ODSP Resources</h2>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
           <div class="feature col">
-            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"><svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#collection"></use></svg></div>
-            <h3 class="fs-2 text-body-emphasis">Featured title</h3>
-            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-            <a href="#" class="icon-link">
-              Call to action
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#collection"></use></svg>
+            </div>
+            <h3 class="fs-2 text-body-emphasis">Eligibility Information</h3>
+            <p>Learn about ODSP eligibility requirements, application process, and documentation needed to apply for Ontario Disability Support Program benefits.</p>
+            <a href="/about" class="icon-link">
+              Learn More
               <svg class="bi" aria-hidden="true"><use xlink:href="#chevron-right"></use></svg>
             </a>
           </div>
           <div class="feature col">
-            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"><svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#people-circle"></use></svg></div>
-            <h3 class="fs-2 text-body-emphasis">Featured title</h3>
-            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-            <a href="#" class="icon-link">
-              Call to action
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#people-circle"></use></svg>
+            </div>
+            <h3 class="fs-2 text-body-emphasis">Support Services</h3>
+            <p>Discover available support services, community resources, and assistance programs for ODSP recipients across Ontario.</p>
+            <a href="/services" class="icon-link">
+              Explore Services
               <svg class="bi" aria-hidden="true"><use xlink:href="#chevron-right"></use></svg>
             </a>
           </div>
           <div class="feature col">
-            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"><svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#toggles2"></use></svg></div>
-            <h3 class="fs-2 text-body-emphasis">Featured title</h3>
-            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-            <a href="#" class="icon-link">
-              Call to action
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#toggles2"></use></svg>
+            </div>
+            <h3 class="fs-2 text-body-emphasis">Benefits Guide</h3>
+            <p>Understand your ODSP benefits, payment schedules, income calculations, and how to maximize your support.</p>
+            <a href="/services" class="icon-link">
+              View Benefits
               <svg class="bi" aria-hidden="true"><use xlink:href="#chevron-right"></use></svg>
             </a>
           </div>
         </div>
       </div>
+
       <div class="b-example-divider"></div>
+
+      <!-- Hanging icons -->
       <div class="container px-4 py-5" id="hanging-icons">
-        <h2 class="pb-2 border-bottom">Hanging icons</h2>
+        <h2 class="pb-2 border-bottom">How We Help</h2>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-          <div class="col d-flex align-items-start"><div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"><svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#toggles2"></use></svg></div> <div><h3 class="fs-2 text-body-emphasis">Featured title</h3> <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p> <a href="#" class="btn btn-primary"> Primary button </a></div></div>
-          <div class="col d-flex align-items-start"><div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"><svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#cpu-fill"></use></svg></div> <div><h3 class="fs-2 text-body-emphasis">Featured title</h3> <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p> <a href="#" class="btn btn-primary"> Primary button </a></div></div>
-          <div class="col d-flex align-items-start"><div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"><svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#tools"></use></svg></div> <div><h3 class="fs-2 text-body-emphasis">Featured title</h3> <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p> <a href="#" class="btn btn-primary"> Primary button </a></div></div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#toggles2"></use></svg>
+            </div>
+            <div>
+              <h3 class="fs-2 text-body-emphasis">Up-to-Date Information</h3>
+              <p>Access the latest ODSP policy updates, rate changes, and program announcements to stay informed about your benefits.</p>
+              <a href="/about" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#cpu-fill"></use></svg>
+            </div>
+            <div>
+              <h3 class="fs-2 text-body-emphasis">Practical Guidance</h3>
+              <p>Get clear, actionable guidance on navigating the ODSP system, from application to ongoing support management.</p>
+              <a href="/services" class="btn btn-primary">Get Started</a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#tools"></use></svg>
+            </div>
+            <div>
+              <h3 class="fs-2 text-body-emphasis">Community Support</h3>
+              <p>Connect with resources, advocacy groups, and support networks dedicated to helping ODSP recipients.</p>
+              <a href="/contact" class="btn btn-primary">Contact Us</a>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="b-example-divider"></div>
-      <div class="container px-4 py-5" id="custom-cards">
-        <h2 class="pb-2 border-bottom">Custom cards</h2>
-        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-          <div class="col"><div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');"><div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"><h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3> <ul class="d-flex list-unstyled mt-auto"><li class="me-auto"><img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white" /></li> <li class="d-flex align-items-center me-3"><svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Location"><use xlink:href="#geo-fill"></use></svg> <small>Earth</small></li> <li class="d-flex align-items-center"><svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Duration"><use xlink:href="#calendar3"></use></svg> <small>3d</small></li></ul></div></div></div>
-          <div class="col"><div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');"><div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"><h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h3> <ul class="d-flex list-unstyled mt-auto"><li class="me-auto"><img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white" /></li> <li class="d-flex align-items-center me-3"><svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Location"><use xlink:href="#geo-fill"></use></svg> <small>Pakistan</small></li> <li class="d-flex align-items-center"><svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Duration"><use xlink:href="#calendar3"></use></svg> <small>4d</small></li></ul></div></div></div>
-          <div class="col"><div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');"><div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1"><h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3> <ul class="d-flex list-unstyled mt-auto"><li class="me-auto"><img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white" /></li> <li class="d-flex align-items-center me-3"><svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Location"><use xlink:href="#geo-fill"></use></svg> <small>California</small></li> <li class="d-flex align-items-center"><svg class="bi me-2" width="1em" height="1em" role="img" aria-label="Duration"><use xlink:href="#calendar3"></use></svg> <small>5d</small></li></ul></div></div></div>
-        </div>
-      </div>
-      <div class="b-example-divider"></div>
+
+      <!-- Icon grid -->
       <div class="container px-4 py-5" id="icon-grid">
-        <h2 class="pb-2 border-bottom">Icon grid</h2>
+        <h2 class="pb-2 border-bottom">Quick Resources</h2>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-          <div class="col d-flex align-items-start"><svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg> <div><h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3> <p>Paragraph of text beneath the heading to explain the heading.</p></div></div>
-          <div class="col d-flex align-items-start"><svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true"><use xlink:href="#cpu-fill"></use></svg> <div><h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3> <p>Paragraph of text beneath the heading to explain the heading.</p></div></div>
-          <div class="col d-flex align-items-start"><svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true"><use xlink:href="#calendar3"></use></svg> <div><h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3> <p>Paragraph of text beneath the heading to explain the heading.</p></div></div>
-          <div class="col d-flex align-items-start"><svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true"><use xlink:href="#home"></use></svg> <div><h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3> <p>Paragraph of text beneath the heading to explain the heading.</p></div></div>
-          <div class="col d-flex align-items-start"><svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true"><use xlink:href="#speedometer2"></use></svg> <div><h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3> <p>Paragraph of text beneath the heading to explain the heading.</p></div></div>
-          <div class="col d-flex align-items-start"><svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true"><use xlink:href="#toggles2"></use></svg> <div><h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3> <p>Paragraph of text beneath the heading to explain the heading.</p></div></div>
-          <div class="col d-flex align-items-start"><svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true"><use xlink:href="#geo-fill"></use></svg> <div><h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3> <p>Paragraph of text beneath the heading to explain the heading.</p></div></div>
-          <div class="col d-flex align-items-start"><svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true"><use xlink:href="#tools"></use></svg> <div><h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3> <p>Paragraph of text beneath the heading to explain the heading.</p></div></div>
-        </div>
-      </div>
-      <div class="b-example-divider"></div>
-      <div class="container px-4 py-5">
-        <h2 class="pb-2 border-bottom">Features with title</h2>
-        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-          <div class="col d-flex flex-column align-items-start gap-2"><h2 class="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2> <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p> <a href="#" class="btn btn-primary btn-lg">Primary button</a></div>
-          <div class="col">
-            <div class="row row-cols-1 row-cols-sm-2 g-4">
-              <div class="col d-flex flex-column gap-2"><div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3"><svg class="bi" width="1em" height="1em" aria-hidden="true"> <use xlink:href="#collection"></use> </svg></div> <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4> <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p></div>
-              <div class="col d-flex flex-column gap-2"><div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3"><svg class="bi" width="1em" height="1em" aria-hidden="true"> <use xlink:href="#gear-fill"></use> </svg></div> <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4> <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p></div>
-              <div class="col d-flex flex-column gap-2"><div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3"><svg class="bi" width="1em" height="1em" aria-hidden="true"> <use xlink:href="#speedometer"></use> </svg></div> <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4> <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p></div>
-              <div class="col d-flex flex-column gap-2"><div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3"><svg class="bi" width="1em" height="1em" aria-hidden="true"> <use xlink:href="#table"></use> </svg></div> <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4> <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p></div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Application Process</h3>
+              <p>Step-by-step guide to applying for ODSP benefits.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+              <use xlink:href="#cpu-fill"></use>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Medical Reviews</h3>
+              <p>Information about disability determination and reviews.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+              <use xlink:href="#calendar3"></use>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Payment Dates</h3>
+              <p>Monthly payment schedule and deposit information.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+              <use xlink:href="#home"></use>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Housing Benefits</h3>
+              <p>Shelter allowance and housing support information.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+              <use xlink:href="#speedometer2"></use>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Income Reporting</h3>
+              <p>Requirements for reporting income and changes.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+              <use xlink:href="#toggles2"></use>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Appeal Process</h3>
+              <p>How to appeal decisions and access tribunal services.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+              <use xlink:href="#geo-fill"></use>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Local Offices</h3>
+              <p>Find your local ODSP office and contact information.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+              <use xlink:href="#tools"></use>
+            </svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Resources</h3>
+              <p>Additional tools and resources for ODSP recipients.</p>
             </div>
           </div>
         </div>

@@ -1,4 +1,7 @@
 /* Global.css that loads site wide */
+/* #main-content {
+  margin-top: 100px;
+} */
 .main-page header {
   padding-top: 100px;
   height: 500px;
@@ -13,6 +16,9 @@
 }
 
 /* Header styles */
+.main-navbar nav a {
+  color: #000000;
+}
 .main-navbar .navbar {
   height: 100px;
   background: #ffffff;
@@ -20,19 +26,15 @@
 .navbar-brand {
   color: #000000;
 }
-.main-navbar .nav-link {
-  border-radius: 20px;
-  color: #000000;
+
+#navbarNav > ul > li.nav-item.active > a {
+  color: rgb(55, 88, 249) !important;
+  font-weight: bold;
 }
-.main-navbar .nav-item .active {
-  background: #000000;
-  color: #ffffff;
-  border-radius: 20px;
-}
+
 .main-navbar .nav-link:hover {
-  background: #000000;
-  color: #ffffff;
-  border-radius: 20px;
+  color: rgb(55, 88, 249);
+  text-decoration: underline;
 }
 
 .main-navbar #navbarNav ul li {
@@ -43,10 +45,11 @@
 /* Footer Styles */
 
 footer {
-  color: #000000;
+  background: rgb(55, 88, 249);
+  color: #ffffff;
 }
 .footer-nav a {
-  color: blue;
+  color: #ffffff;
   text-decoration: none;
 }
 

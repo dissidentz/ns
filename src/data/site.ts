@@ -4,21 +4,21 @@
 /**
  * Core site information
  */
-export const SITE_NAME = "ODSP Info"; // TODO: Update with your actual company name
+export const SITE_NAME = "ODSP Info";
 export const SITE_TITLE = "ODSP Info";
 export const SITE_DESCRIPTION = "ODSP Info is a comprehensive resource for information about the Ontario Disability Support Program (ODSP), providing insights, updates, and support for individuals navigating the program.";
-export const SITE_URL = "https://example.com"; // TODO: Update when you get your domain
+export const SITE_URL = "https://example.com"; // Update when you get your domain
 
 /**
  * Social sharing defaults
  */
-export const DEFAULT_OG_IMAGE = "/images/og-default.jpg"; // TODO: Create and add your default social share image
+export const DEFAULT_OG_IMAGE = "/images/og-default.jpg";
 
 /**
  * Page-specific titles (append site name automatically)
  */
 export const PAGE_TITLES = {
-  home: `Home - ${SITE_NAME}`,
+  home: `Ontario Disability Support Program Resources - ${SITE_NAME}`,
   about: `About Us - ${SITE_NAME}`,
   services: `Our Services - ${SITE_NAME}`,
   contact: `Contact Us - ${SITE_NAME}`,
@@ -30,10 +30,10 @@ export const PAGE_TITLES = {
  * Page-specific descriptions for SEO
  */
 export const PAGE_DESCRIPTIONS = {
-  home: "Welcome to ODSP Info. Discover our services and learn more about what we do.",
-  about: "Learn about ODSP Info's mission, values, and the team behind our success.",
-  services: "Explore our comprehensive range of professional services designed to meet your needs.",
-  contact: "Get in touch with our team. We're here to answer questions and help you succeed.",
+  home: "Comprehensive ODSP resources, program information, eligibility requirements, and support for Ontario Disability Support Program recipients and applicants.",
+  about: "Learn about ODSP Info's mission to support ODSP recipients with accurate information, resources, and guidance for navigating the Ontario Disability Support Program.",
+  services: "Explore our ODSP resources including eligibility guides, application assistance, benefits information, and support services for program recipients.",
+  contact: "Get in touch with the ODSP Info team. We're here to answer your questions about the Ontario Disability Support Program and help you navigate the system.",
   test: "Test page for development purposes.",
   cheatsheet: "Bootstrap component reference and examples.",
 } as const;
@@ -53,6 +53,7 @@ export const HERO_TITLES = {
  * Page-specific Open Graph images (optional - falls back to default)
  */
 export const PAGE_OG_IMAGES = {
+  home: "/images/home-og.jpg",
   about: "/images/about-og.jpg",
   services: "/images/services-og.jpg",
   contact: "/images/contact-og.jpg",
