@@ -6,38 +6,40 @@ import { SITE_NAME } from "../data/site";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-top">
-  <div class="container py-5">
-    <div class="row align-items-start">
-      <div class="col-xxl-6 mb-6">
-        <div class="footer-site-info">
-          <h3 class="h5 fw-bold mb-3">{SITE_NAME}</h3>
-          <p>
-            {SITE_NAME} provides comprehensive information and resources about the Ontario Disability Support Program (ODSP). We help recipients and applicants navigate the program with up-to-date guidance, eligibility information, and support services.
-          </p>
-          <p class="mb-0">
-            <small>
-              <strong>Disclaimer:</strong> This website provides general information only. For official ODSP information, please contact your local office or visit the official Ontario government website.
-            </small>
-          </p>
+<div class="page-footer">
+  <footer class="border-top">
+    <div class="container py-5">
+      <div class="row align-items-start">
+        <div class="col-xxl-6 mb-6">
+          <div class="footer-site-info">
+            <h3 class="h5 fw-bold mb-3">{SITE_NAME}</h3>
+            <p>
+              {SITE_NAME} provides comprehensive information and resources about the Ontario Disability Support Program (ODSP). We help recipients and applicants navigate the program with up-to-date guidance, eligibility information, and support services.
+            </p>
+            <p class="mb-0">
+              <small>
+                <strong>Disclaimer:</strong> This website provides general information only. For official ODSP information, please contact your local office or visit the official Ontario government website.
+              </small>
+            </p>
+          </div>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-xxl-2 mb-6">
+          <h6 class="fw-semibold mb-3 mt-4 mt-md-0">Quick Link</h6>
+          <div class="footer-nav">
+            <nav aria-label="Footer navigation">
+              <ul class="list-unstyled">
+                <Menu menu={footerMenu} />
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
-      <div class="col-4"></div>
-      <div class="col-xxl-2 mb-6">
-        <h6 class="fw-semibold mb-3 mt-4 mt-md-0">Quick Link</h6>
-        <div class="footer-nav">
-          <nav aria-label="Footer navigation">
-            <ul class="list-unstyled">
-              <Menu menu={footerMenu} />
-            </ul>
-          </nav>
+      <div class="row my-5">
+        <div class="col-12 text-center">
+          <div>© {currentYear} {SITE_NAME}. All rights reserved.</div>
         </div>
       </div>
     </div>
-    <div class="row my-5">
-      <div class="col-12 text-center">
-        <div>© {currentYear} {SITE_NAME}. All rights reserved.</div>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
+</div>

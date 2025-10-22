@@ -1,19 +1,187 @@
 ---
-// /src/pages/contact.astro
-import InnerPageLayout from "../layouts/InnerPageLayout.astro";
-import { PAGE_TITLES, PAGE_DESCRIPTIONS, HERO_TITLES, PAGE_OG_IMAGES, DEFAULT_OG_IMAGE } from "../data/site";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import InnerHero from "../components/sections/InnerHero.astro";
+import { SITE_NAME } from "../data/site";
 ---
 
-<InnerPageLayout pageTitle={PAGE_TITLES.contact} pageDescription={PAGE_DESCRIPTIONS.contact} pageImage={PAGE_OG_IMAGES.contact || DEFAULT_OG_IMAGE} innerTitle={HERO_TITLES.contact}
-  ><div class="container">
-    <h1>Contact</h1>
-    <section>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id quam sit amet augue mollis sollicitudin. Maecenas maximus quis est ut feugiat. Ut rhoncus est in diam posuere, eu dignissim purus ullamcorper. Nunc odio metus, efficitur et augue non, rhoncus bibendum nulla. Donec purus lacus, tempor at egestas vel, posuere non mi. Curabitur egestas vestibulum convallis. Proin et turpis sollicitudin, feugiat ex ac, blandit lorem. In fermentum augue ante, a ornare sem mollis ac. Vivamus consequat vehicula leo. Aliquam in elit vel tellus posuere finibus. Aenean vulputate metus vitae elit blandit dapibus. Proin magna tortor, sollicitudin tempus risus at, dignissim dapibus libero. Sed lobortis, neque quis sagittis porttitor, ipsum ex sagittis felis, congue dapibus mi ex vitae risus. In pharetra metus quis nisl eleifend congue. Suspendisse at bibendum odio. Duis rutrum tristique velit, ut fringilla nisl faucibus in. Fusce varius placerat sem, quis gravida justo faucibus ut. Aenean id consequat lacus, id mattis sapien. Vivamus dictum dapibus tincidunt. Morbi dui sem, tincidunt sit amet sollicitudin eleifend, lacinia a justo. Nullam lacinia eleifend dui in suscipit. Cras non
-        hendrerit ante, scelerisque euismod lectus. Mauris et facilisis libero. Maecenas ut elit id nulla pulvinar iaculis at vel risus. Fusce accumsan nibh vitae quam gravida bibendum. Duis porttitor, metus molestie ultricies venenatis, sapien velit dapibus turpis, non consectetur nisi mi in enim. Pellentesque tincidunt quam risus. Nullam tempor nulla nunc, sit amet cursus est suscipit tincidunt. Nullam hendrerit egestas tempus. Duis vulputate lorem eu metus aliquet, in vestibulum ipsum interdum. Morbi id augue felis. In finibus pulvinar arcu eu luctus. Morbi faucibus vestibulum magna, in placerat ante ultrices sed. Maecenas ac elit ac erat egestas interdum ut quis elit. Fusce tristique elit sed lectus dignissim vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc ex lacus, placerat at quam in, cursus hendrerit massa. Praesent hendrerit diam id ultrices scelerisque. Maecenas eleifend id sapien in dictum. Integer porttitor mi quis libero aliquam lacinia. Donec a faucibus quam. Morbi bibendum, ex quis venenatis euismod, diam urna ultricies leo, vitae tincidunt dui nunc eget diam. Fusce vitae tristique turpis. Nunc ipsum
-        lectus, malesuada nec venenatis non, tincidunt id orci. Donec vitae sollicitudin dui. Mauris facilisis felis a commodo convallis. Sed tristique lobortis velit id efficitur. Nunc commodo nulla a dignissim convallis. Mauris mauris lectus, dapibus a dui vel, venenatis dignissim justo. Aliquam consectetur fringilla justo, ut elementum nisi eleifend eget. Curabitur nec dolor eu turpis aliquam pulvinar sed ac nulla. Aliquam ultricies et elit eget suscipit. Phasellus venenatis massa sit amet justo auctor, sed euismod justo tempus. Vestibulum eu venenatis erat. Morbi dictum felis non aliquam pretium. Curabitur in metus ut orci tincidunt ornare. Sed aliquet, lectus et hendrerit ultrices, risus nisl pellentesque justo, suscipit scelerisque lorem erat nec elit. Aenean ante purus, malesuada euismod mattis a, pulvinar a elit. Vivamus vehicula ultricies ex, vel auctor dolor elementum vel. Vestibulum mauris sapien, rhoncus sit amet turpis sit amet, lobortis rutrum libero. Quisque tincidunt egestas tristique. Pellentesque a lectus turpis. In hac habitasse platea dictumst. Fusce pellentesque arcu nec nis
-      </p>
-    </section>
-    <!-- </Layout> -->
-  </div>
-</InnerPageLayout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Contact Us - ${SITE_NAME}`} description="Get in touch with the ODSP Info team. We're here to answer your questions about the Ontario Disability Support Program and help you navigate the system." />
+  </head>
+  <body>
+    <Header />
+    <InnerHero title="Contact Us" />
+
+    <main id="main-content" class="container py-5">
+      <div class="row">
+        <!-- Contact Form -->
+        <div class="col-lg-8">
+          <div class="mb-4">
+            <h2 class="h4 mb-3">Get in Touch</h2>
+            <p class="lead">Have questions about ODSP? Need help navigating the system? We're here to help.</p>
+          </div>
+
+          <!-- Netlify Form -->
+          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact-success">
+            <!-- Hidden fields for Netlify -->
+            <input type="hidden" name="form-name" value="contact" />
+
+            <!-- Honeypot for spam protection -->
+            <p class="d-none">
+              <label>
+                Don't fill this out if you're human:
+                <input name="bot-field" />
+              </label>
+            </p>
+
+            <!-- Name -->
+            <div class="mb-3">
+              <label for="name" class="form-label">
+                Your Name <span class="text-danger">*</span>
+              </label>
+              <input type="text" class="form-control" id="name" name="name" required placeholder="John Smith" />
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">
+                Email Address <span class="text-danger">*</span>
+              </label>
+              <input type="email" class="form-control" id="email" name="email" required placeholder="your.email@example.com" />
+            </div>
+
+            <!-- Subject -->
+            <div class="mb-3">
+              <label for="subject" class="form-label">
+                Subject <span class="text-danger">*</span>
+              </label>
+              <select class="form-select" id="subject" name="subject" required>
+                <option value="">Choose a topic...</option>
+                <option value="eligibility">Eligibility Question</option>
+                <option value="application">Application Help</option>
+                <option value="benefits">Benefits Inquiry</option>
+                <option value="appeal">Appeal Process</option>
+                <option value="general">General Question</option>
+                <option value="feedback">Website Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-3">
+              <label for="message" class="form-label">
+                Message <span class="text-danger">*</span>
+              </label>
+              <textarea class="form-control" id="message" name="message" rows="6" required placeholder="Tell us how we can help you..."></textarea>
+              <div class="form-text">Please do not include sensitive personal information like social insurance numbers or medical details.</div>
+            </div>
+
+            <!-- Privacy Notice -->
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="privacy" name="privacy" required />
+              <label class="form-check-label" for="privacy">
+                I understand that ODSP Info is an informational resource and not affiliated with the Ontario government. For official ODSP matters, contact your local ODSP office. <span class="text-danger">*</span>
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-lg">
+              <i class="bi bi-send me-2"></i>
+              Send Message
+            </button>
+          </form>
+
+          <!-- Important Notice -->
+          <div class="alert alert-info mt-5">
+            <h3 class="h6 alert-heading">
+              <i class="bi bi-info-circle me-2"></i>
+              Important Notice
+            </h3>
+            <p class="mb-0">
+              <strong>ODSP Info is not an official government service.</strong> We provide information and resources about the Ontario Disability Support Program, but cannot process applications, approve benefits, or make decisions about your case. For official ODSP services, please contact your
+              <a href="#" class="alert-link">local ODSP office</a>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <!-- Contact Information -->
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">
+                <i class="bi bi-info-circle me-2"></i>
+                Contact Information
+              </h3>
+              <p class="card-text small mb-3">We typically respond within 1-2 business days. For urgent ODSP matters, please contact your local office directly.</p>
+              <hr />
+              <div class="mb-3">
+                <h4 class="h6 mb-2">
+                  <i class="bi bi-clock me-2"></i>
+                  Response Time
+                </h4>
+                <p class="small mb-0">1-2 business days</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">Before You Contact</h3>
+              <p class="card-text small mb-3">Your question might already be answered:</p>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2">
+                  <a href="/blog" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    Browse Articles
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/search" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    Search Resources
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/services" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    View Services
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Official ODSP Resources -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">Official ODSP Resources</h3>
+              <p class="card-text small mb-3">For official government services:</p>
+              <ul class="list-unstyled mb-0 small">
+                <li class="mb-2">
+                  <strong>ODSP Hotline:</strong><br />
+                  1-888-789-4199
+                </li>
+                <li class="mb-2">
+                  <strong>Website:</strong><br />
+                  <a href="https://www.ontario.ca/page/ontario-disability-support-program-odsp" target="_blank" rel="noopener noreferrer"> ontario.ca/odsp </a>
+                </li>
+                <li class="mb-0">
+                  <strong>Hours:</strong><br />
+                  Monday - Friday<br />
+                  8:30 AM - 5:00 PM
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

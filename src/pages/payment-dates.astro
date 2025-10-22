@@ -1,0 +1,282 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import InnerHero from "../components/sections/InnerHero.astro";
+import { SITE_NAME } from "../data/site";
+
+// Get current month and year
+const now = new Date();
+const currentMonth = now.getMonth();
+const currentYear = now.getFullYear();
+
+// ODSP payments are typically issued on the last business day of each month
+// This is a simplified version - you'd want to account for holidays
+const paymentDates2025 = [
+  { month: "January", date: "January 31, 2025", day: "Friday" },
+  { month: "February", date: "February 28, 2025", day: "Friday" },
+  { month: "March", date: "March 31, 2025", day: "Monday" },
+  { month: "April", date: "April 30, 2025", day: "Wednesday" },
+  { month: "May", date: "May 30, 2025", day: "Friday" },
+  { month: "June", date: "June 30, 2025", day: "Monday" },
+  { month: "July", date: "July 31, 2025", day: "Thursday" },
+  { month: "August", date: "August 29, 2025", day: "Friday" },
+  { month: "September", date: "September 30, 2025", day: "Tuesday" },
+  { month: "October", date: "October 31, 2025", day: "Friday" },
+  { month: "November", date: "November 28, 2025", day: "Friday" },
+  { month: "December", date: "December 31, 2025", day: "Wednesday" },
+];
+
+// Get next payment date
+const nextPayment = paymentDates2025.find((payment, index) => index >= currentMonth);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`ODSP Payment Dates 2025 - ${SITE_NAME}`} description="Find ODSP payment dates for 2025. Know exactly when your Ontario Disability Support Program payments will be deposited each month." />
+  </head>
+  <body>
+    <Header />
+    <InnerHero title="ODSP Payment Dates 2025" />
+
+    <main id="main-content" class="container py-5">
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8">
+          <!-- Next Payment Highlight -->
+          {
+            nextPayment && (
+              <div class="alert alert-success mb-4">
+                <h2 class="h5 alert-heading mb-3">
+                  <i class="bi bi-calendar-check me-2" />
+                  Next Payment Date
+                </h2>
+                <p class="mb-2 fs-5">
+                  <strong>{nextPayment.month}:</strong> {nextPayment.date}
+                </p>
+                <p class="mb-0 text-muted">
+                  <i class="bi bi-clock me-1" />
+                  Payments are typically deposited by midnight on the payment date.
+                </p>
+              </div>
+            )
+          }
+
+          <!-- Payment Schedule -->
+          <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+              <h2 class="h5 mb-0">
+                <i class="bi bi-calendar3 me-2"></i>
+                2025 Payment Schedule
+              </h2>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-striped table-hover mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Month</th>
+                      <th scope="col">Payment Date</th>
+                      <th scope="col">Day of Week</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      paymentDates2025.map((payment, index) => (
+                        <tr class={index === currentMonth ? "table-success" : ""}>
+                          <td>
+                            <strong>{payment.month}</strong>
+                            {index === currentMonth && <span class="badge bg-success ms-2">Current</span>}
+                          </td>
+                          <td>{payment.date}</td>
+                          <td>{payment.day}</td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Information -->
+          <div class="card shadow-sm mb-4">
+            <div class="card-header">
+              <h2 class="h5 mb-0">
+                <i class="bi bi-info-circle me-2"></i>
+                Important Payment Information
+              </h2>
+            </div>
+            <div class="card-body">
+              <h3 class="h6 mb-3">Payment Timing</h3>
+              <ul class="mb-4">
+                <li class="mb-2">
+                  ODSP payments are issued on the <strong>last business day</strong> of each month
+                </li>
+                <li class="mb-2">
+                  If the last day falls on a weekend or holiday, payments are issued the <strong>business day before</strong>
+                </li>
+                <li class="mb-2">
+                  Direct deposits typically appear by <strong>midnight</strong> on the payment date
+                </li>
+                <li class="mb-0">
+                  Cheques are mailed approximately <strong>5 business days</strong> before the payment date
+                </li>
+              </ul>
+
+              <h3 class="h6 mb-3">Payment Methods</h3>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="card border-primary h-100">
+                    <div class="card-body">
+                      <h4 class="h6 text-primary mb-2">
+                        <i class="bi bi-bank me-2"></i>
+                        Direct Deposit (Recommended)
+                      </h4>
+                      <ul class="small mb-0">
+                        <li>Fastest method</li>
+                        <li>Most reliable</li>
+                        <li>No risk of lost cheques</li>
+                        <li>Funds available immediately</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card border-secondary h-100">
+                    <div class="card-body">
+                      <h4 class="h6 text-secondary mb-2">
+                        <i class="bi bi-envelope me-2"></i>
+                        Mailed Cheque
+                      </h4>
+                      <ul class="small mb-0">
+                        <li>Mailed 5 days early</li>
+                        <li>Requires bank visit</li>
+                        <li>Subject to mail delays</li>
+                        <li>Clearing time may apply</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- What to Do If Payment is Late -->
+          <div class="card shadow-sm mb-4">
+            <div class="card-header">
+              <h2 class="h5 mb-0">
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                What If My Payment Is Late?
+              </h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-3">If your payment hasn't arrived by the expected date:</p>
+
+              <ol class="mb-3">
+                <li class="mb-2">
+                  <strong>Wait 24 hours</strong> - Direct deposits can sometimes be delayed until the next business day
+                </li>
+                <li class="mb-2">
+                  <strong>Check your bank account</strong> - Verify the payment hasn't been deposited under a different name or reference
+                </li>
+                <li class="mb-2">
+                  <strong>Contact your ODSP office</strong> - Call your local office during business hours
+                </li>
+                <li class="mb-0">
+                  <strong>Have your information ready</strong> - Client number, address, and banking details
+                </li>
+              </ol>
+
+              <div class="alert alert-info mb-0">
+                <p class="small mb-2">
+                  <strong>ODSP Contact Information:</strong>
+                </p>
+                <p class="small mb-0">
+                  <i class="bi bi-telephone me-2"></i>
+                  General Inquiries: <strong>1-888-789-4199</strong><br />
+                  <i class="bi bi-clock me-2"></i>
+                  Hours: Monday - Friday, 8:30 AM - 5:00 PM
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <!-- Quick Facts -->
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">Quick Facts</h3>
+              <hr />
+              <div class="mb-3">
+                <div class="d-flex align-items-start mb-2">
+                  <i class="bi bi-calendar-event text-primary me-2 mt-1"></i>
+                  <div>
+                    <strong class="d-block">Payment Frequency</strong>
+                    <small class="text-muted">Monthly, on last business day</small>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex align-items-start mb-2">
+                  <i class="bi bi-clock-history text-primary me-2 mt-1"></i>
+                  <div>
+                    <strong class="d-block">Deposit Time</strong>
+                    <small class="text-muted">By midnight on payment date</small>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-0">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-envelope-check text-primary me-2 mt-1"></i>
+                  <div>
+                    <strong class="d-block">Cheque Mailing</strong>
+                    <small class="text-muted">5 business days before</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Resources -->
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">Related Resources</h3>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2">
+                  <a href="/blog/odsp-payment-rates-2025" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    Current Payment Rates
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/services" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    ODSP Services Overview
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/contact" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    Contact Us
+                  </a>
+                </li>
+                <li class="mb-0">
+                  <a href="/blog" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    All Articles
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

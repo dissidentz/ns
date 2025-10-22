@@ -1,20 +1,284 @@
 ---
-// /src/pages/about.astro
-import InnerPageLayout from "../layouts/InnerPageLayout.astro";
-import { PAGE_TITLES, PAGE_DESCRIPTIONS, HERO_TITLES, PAGE_OG_IMAGES, DEFAULT_OG_IMAGE } from "../data/site";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import InnerHero from "../components/sections/InnerHero.astro";
+import { SITE_NAME } from "../data/site";
 ---
 
-<InnerPageLayout pageTitle={PAGE_TITLES.about} pageDescription={PAGE_DESCRIPTIONS.about} pageImage={PAGE_OG_IMAGES.about || DEFAULT_OG_IMAGE} innerTitle={HERO_TITLES.about}>
-  <!-- <Layout> -->
-  <div class="container">
-    <h1>About</h1>
-    <section>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id quam sit amet augue mollis sollicitudin. Maecenas maximus quis est ut feugiat. Ut rhoncus est in diam posuere, eu dignissim purus ullamcorper. Nunc odio metus, efficitur et augue non, rhoncus bibendum nulla. Donec purus lacus, tempor at egestas vel, posuere non mi. Curabitur egestas vestibulum convallis. Proin et turpis sollicitudin, feugiat ex ac, blandit lorem. In fermentum augue ante, a ornare sem mollis ac. Vivamus consequat vehicula leo. Aliquam in elit vel tellus posuere finibus. Aenean vulputate metus vitae elit blandit dapibus. Proin magna tortor, sollicitudin tempus risus at, dignissim dapibus libero. Sed lobortis, neque quis sagittis porttitor, ipsum ex sagittis felis, congue dapibus mi ex vitae risus. In pharetra metus quis nisl eleifend congue. Suspendisse at bibendum odio. Duis rutrum tristique velit, ut fringilla nisl faucibus in. Fusce varius placerat sem, quis gravida justo faucibus ut. Aenean id consequat lacus, id mattis sapien. Vivamus dictum dapibus tincidunt. Morbi dui sem, tincidunt sit amet sollicitudin eleifend, lacinia a justo. Nullam lacinia eleifend dui in suscipit. Cras non
-        hendrerit ante, scelerisque euismod lectus. Mauris et facilisis libero. Maecenas ut elit id nulla pulvinar iaculis at vel risus. Fusce accumsan nibh vitae quam gravida bibendum. Duis porttitor, metus molestie ultricies venenatis, sapien velit dapibus turpis, non consectetur nisi mi in enim. Pellentesque tincidunt quam risus. Nullam tempor nulla nunc, sit amet cursus est suscipit tincidunt. Nullam hendrerit egestas tempus. Duis vulputate lorem eu metus aliquet, in vestibulum ipsum interdum. Morbi id augue felis. In finibus pulvinar arcu eu luctus. Morbi faucibus vestibulum magna, in placerat ante ultrices sed. Maecenas ac elit ac erat egestas interdum ut quis elit. Fusce tristique elit sed lectus dignissim vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc ex lacus, placerat at quam in, cursus hendrerit massa. Praesent hendrerit diam id ultrices scelerisque. Maecenas eleifend id sapien in dictum. Integer porttitor mi quis libero aliquam lacinia. Donec a faucibus quam. Morbi bibendum, ex quis venenatis euismod, diam urna ultricies leo, vitae tincidunt dui nunc eget diam. Fusce vitae tristique turpis. Nunc ipsum
-        lectus, malesuada nec venenatis non, tincidunt id orci. Donec vitae sollicitudin dui. Mauris facilisis felis a commodo convallis. Sed tristique lobortis velit id efficitur. Nunc commodo nulla a dignissim convallis. Mauris mauris lectus, dapibus a dui vel, venenatis dignissim justo. Aliquam consectetur fringilla justo, ut elementum nisi eleifend eget. Curabitur nec dolor eu turpis aliquam pulvinar sed ac nulla. Aliquam ultricies et elit eget suscipit. Phasellus venenatis massa sit amet justo auctor, sed euismod justo tempus. Vestibulum eu venenatis erat. Morbi dictum felis non aliquam pretium. Curabitur in metus ut orci tincidunt ornare. Sed aliquet, lectus et hendrerit ultrices, risus nisl pellentesque justo, suscipit scelerisque lorem erat nec elit. Aenean ante purus, malesuada euismod mattis a, pulvinar a elit. Vivamus vehicula ultricies ex, vel auctor dolor elementum vel. Vestibulum mauris sapien, rhoncus sit amet turpis sit amet, lobortis rutrum libero. Quisque tincidunt egestas tristique. Pellentesque a lectus turpis. In hac habitasse platea dictumst. Fusce pellentesque arcu nec nis
-      </p>
-    </section>
-    <!-- </Layout> -->
-  </div>
-</InnerPageLayout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`About Us - ${SITE_NAME}`} description="Learn about ODSP Info's mission to provide accessible, up-to-date information about the Ontario Disability Support Program and help recipients navigate the system." />
+  </head>
+  <body>
+    <Header />
+    <InnerHero title="About ODSP Info" />
+
+    <main id="main-content" class="container py-5">
+      <!-- Introduction -->
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+          <p class="lead text-center">ODSP Info is a comprehensive resource dedicated to helping Ontarians understand and navigate the Ontario Disability Support Program.</p>
+        </div>
+      </div>
+
+      <!-- Our Mission -->
+      <div class="row mb-5">
+        <div class="col-lg-10 mx-auto">
+          <div class="card shadow-sm">
+            <div class="card-body p-4">
+              <h2 class="h3 mb-4">
+                <i class="bi bi-bullseye text-primary me-2"></i>
+                Our Mission
+              </h2>
+              <p class="mb-3">We believe that everyone deserves access to clear, accurate information about ODSP. Our mission is to break down complex government processes into understandable guidance that helps people access the support they need.</p>
+              <p class="mb-0">Whether you're applying for ODSP for the first time, managing your existing benefits, or navigating the appeals process, we're here to provide reliable information that empowers you to make informed decisions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What We Provide -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="h3 text-center mb-4">What We Provide</h2>
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 border-primary">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="bi bi-file-text text-primary" style="font-size: 2.5rem;"></i>
+              </div>
+              <h3 class="h5 card-title">Clear Information</h3>
+              <p class="card-text small">Easy-to-understand guides about ODSP eligibility, application processes, and benefit calculations.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 border-primary">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="bi bi-clock-history text-primary" style="font-size: 2.5rem;"></i>
+              </div>
+              <h3 class="h5 card-title">Up-to-Date Resources</h3>
+              <p class="card-text small">Current information about policy changes, rate updates, and program modifications as they happen.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 border-primary">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="bi bi-lightbulb text-primary" style="font-size: 2.5rem;"></i>
+              </div>
+              <h3 class="h5 card-title">Practical Guidance</h3>
+              <p class="card-text small">Step-by-step instructions for common ODSP tasks, from applying to reporting income changes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 border-primary">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="bi bi-search text-primary" style="font-size: 2.5rem;"></i>
+              </div>
+              <h3 class="h5 card-title">Easy Access</h3>
+              <p class="card-text small">Powerful search functionality to help you find exactly what you need, when you need it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Our Approach -->
+      <div class="row mb-5">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="h3 mb-4">Our Approach</h2>
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                </div>
+                <div>
+                  <h3 class="h6 mb-2">Accessible Language</h3>
+                  <p class="small mb-0">We avoid jargon and explain complex policies in plain language that everyone can understand.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                </div>
+                <div>
+                  <h3 class="h6 mb-2">Accurate Information</h3>
+                  <p class="small mb-0">All content is researched and verified to ensure you receive reliable, trustworthy information.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                </div>
+                <div>
+                  <h3 class="h6 mb-2">Regular Updates</h3>
+                  <p class="small mb-0">We monitor ODSP announcements and update our content to reflect the latest policies and procedures.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                </div>
+                <div>
+                  <h3 class="h6 mb-2">User-Centered Design</h3>
+                  <p class="small mb-0">Our website is designed with accessibility in mind, ensuring information is easy to find and navigate.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Important Notice -->
+      <div class="row mb-5">
+        <div class="col-lg-10 mx-auto">
+          <div class="alert alert-warning">
+            <h3 class="h5 alert-heading">
+              <i class="bi bi-exclamation-triangle me-2"></i>
+              Important Notice
+            </h3>
+            <hr />
+            <p class="mb-2">
+              <strong>ODSP Info is an independent informational resource and is not affiliated with or endorsed by the Ontario government.</strong>
+            </p>
+            <p class="mb-0">We provide educational content to help people understand ODSP, but we cannot:</p>
+            <ul class="mb-0 mt-2">
+              <li>Process ODSP applications</li>
+              <li>Make decisions about eligibility or benefits</li>
+              <li>Provide legal advice</li>
+              <li>Access your ODSP case information</li>
+            </ul>
+            <hr />
+            <p class="mb-0">
+              For official ODSP services, please contact your local ODSP office or call
+              <strong>1-888-789-4199</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- How to Use This Site -->
+      <div class="row mb-5">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="h3 mb-4">How to Use This Site</h2>
+
+          <div class="accordion" id="howToUseAccordion">
+            <!-- Browse Articles -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                  <i class="bi bi-journal-text me-2"></i>
+                  Browse Our Articles
+                </button>
+              </h3>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#howToUseAccordion">
+                <div class="accordion-body">
+                  <p>
+                    Visit our <a href="/blog">blog section</a> to explore articles about ODSP topics. Articles are organized by tags, making it easy to find information about specific subjects like eligibility, benefits, or appeals.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Use Search -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                  <i class="bi bi-search me-2"></i>
+                  Use Our Search Feature
+                </button>
+              </h3>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#howToUseAccordion">
+                <div class="accordion-body">
+                  <p>
+                    Our <a href="/search">search page</a> helps you quickly find specific information. Simply type keywords related to your question, and you'll get instant results from across our entire site.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Explore Services -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                  <i class="bi bi-grid-3x3-gap me-2"></i>
+                  Explore ODSP Services
+                </button>
+              </h3>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#howToUseAccordion">
+                <div class="accordion-body">
+                  <p>
+                    Visit our <a href="/services">services page</a> to learn about different aspects of ODSP, including eligibility requirements, support services, and benefit information.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                  <i class="bi bi-envelope me-2"></i>
+                  Contact Us
+                </button>
+              </h3>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#howToUseAccordion">
+                <div class="accordion-body">
+                  <p>
+                    Have a question or suggestion? Use our <a href="/contact">contact form</a> to get in touch. We typically respond within 1-2 business days.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="card bg-primary text-white">
+            <div class="card-body text-center p-5">
+              <h2 class="h3 mb-3">Ready to Learn More?</h2>
+              <p class="lead mb-4">Explore our resources and find the information you need about ODSP.</p>
+              <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="/blog" class="btn btn-light btn-lg">
+                  <i class="bi bi-journal-text me-2"></i>
+                  Browse Articles
+                </a>
+                <a href="/search" class="btn btn-outline-light btn-lg">
+                  <i class="bi bi-search me-2"></i>
+                  Search Resources
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

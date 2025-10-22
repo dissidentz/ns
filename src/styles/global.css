@@ -44,20 +44,20 @@
 
 /* Footer Styles */
 
-footer {
+.page-footer footer {
   background: rgb(55, 88, 249);
   color: #ffffff;
 }
-.footer-nav a {
+.page-footer .footer-nav a {
   color: #ffffff;
   text-decoration: none;
 }
 
-.footer-nav a:hover {
+.page-footer .footer-nav a:hover {
   text-decoration: underline;
 }
 
-.footer-nav ul {
+.page-footer .footer-nav ul {
   list-style: none;
   padding-left: 0;
   margin: 0;

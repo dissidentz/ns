@@ -24,6 +24,7 @@ export const PAGE_TITLES = {
   blog: `ODSP Blog & Updates - ${SITE_NAME}`,
   search: `Search - ${SITE_NAME}`,
   contact: `Contact Us - ${SITE_NAME}`,
+  paymentDates: `ODSP Payment Dates 2025 - ${SITE_NAME}`,
   cheatsheet: `Bootstrap Cheatsheet - ${SITE_NAME}`,
 } as const;
 

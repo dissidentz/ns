@@ -1,0 +1,45 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import InnerHero from "../components/sections/InnerHero.astro";
+import { SITE_NAME } from "../data/site";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Message Sent - ${SITE_NAME}`} description="Thank you for contacting ODSP Info. We'll get back to you soon." />
+  </head>
+  <body>
+    <Header />
+    <InnerHero title="Thank You!" />
+
+    <main id="main-content" class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <div class="mb-4">
+            <i class="bi bi-check-circle text-success" style="font-size: 4rem;"></i>
+          </div>
+
+          <h2 class="mb-3">Message Received!</h2>
+
+          <p class="lead mb-4">Thank you for contacting us. We've received your message and will respond within 1-2 business days.</p>
+
+          <div class="d-flex gap-3 justify-content-center">
+            <a href="/" class="btn btn-primary">
+              <i class="bi bi-house me-2"></i>
+              Back to Home
+            </a>
+            <a href="/blog" class="btn btn-outline-primary">
+              <i class="bi bi-journal-text me-2"></i>
+              Browse Articles
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
