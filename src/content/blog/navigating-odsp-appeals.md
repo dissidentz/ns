@@ -5,7 +5,7 @@ pubDate: 2024-12-10
 updatedDate: 2025-01-20
 author: "ODSP Info Team"
 tags: ["appeals", "tribunal", "rights", "process"]
-image: "/images/blog/appeals.jpg"
+image: "/images/blog/appeals.png"
 ---
 
 ## Understanding ODSP Appeals

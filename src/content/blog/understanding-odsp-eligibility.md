@@ -4,7 +4,7 @@ description: "A comprehensive guide to ODSP eligibility criteria, including disa
 pubDate: 2025-01-15
 author: "ODSP Info Team"
 tags: ["eligibility", "application", "requirements"]
-image: "/images/blog/eligibility.jpg"
+image: "/images/blog/eligibility.png"
 ---
 
 ## What is ODSP Eligibility?

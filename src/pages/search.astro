@@ -17,22 +17,159 @@ import { SITE_NAME } from "../data/site";
     <InnerHero title="Search ODSP Resources" />
 
     <main id="main-content" class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
+      <div class="row">
+        <!-- Main Content - Search Area -->
+        <div class="col-lg-8">
           <div class="mb-4">
-            <p class="lead text-center text-muted">Search for ODSP eligibility, benefits, application guides, and more</p>
+            <p class="lead">Search for ODSP eligibility, benefits, application guides, and more</p>
           </div>
 
+          <!-- Search Component -->
           <SearchComponent />
 
+          <!-- Quick Topic Links (Better than fake search) -->
           <div class="mt-5">
-            <h2 class="h5 mb-3">Popular Searches:</h2>
-            <div class="d-flex flex-wrap gap-2">
-              <a href="/search?q=eligibility" class="badge bg-secondary text-decoration-none px-3 py-2"> Eligibility </a>
-              <a href="/search?q=benefits" class="badge bg-secondary text-decoration-none px-3 py-2"> Benefits </a>
-              <a href="/search?q=application" class="badge bg-secondary text-decoration-none px-3 py-2"> Application </a>
-              <a href="/search?q=payment" class="badge bg-secondary text-decoration-none px-3 py-2"> Payment </a>
-              <a href="/search?q=appeal" class="badge bg-secondary text-decoration-none px-3 py-2"> Appeal </a>
+            <h2 class="h5 mb-3">Popular Topics</h2>
+            <p class="text-muted small mb-3">Browse our most requested ODSP information:</p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <a href="/blog/understanding-odsp-eligibility" class="text-decoration-none">
+                  <div class="card h-100 border-primary">
+                    <div class="card-body">
+                      <h3 class="h6 card-title text-primary mb-2">
+                        <i class="bi bi-check-circle me-2"></i>
+                        Eligibility Requirements
+                      </h3>
+                      <p class="card-text small mb-0">Learn about ODSP eligibility criteria and application requirements</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6">
+                <a href="/blog/odsp-payment-rates-2025" class="text-decoration-none">
+                  <div class="card h-100 border-primary">
+                    <div class="card-body">
+                      <h3 class="h6 card-title text-primary mb-2">
+                        <i class="bi bi-cash-coin me-2"></i>
+                        Payment Rates 2025
+                      </h3>
+                      <p class="card-text small mb-0">Current ODSP payment rates and benefit amounts</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6">
+                <a href="/blog/navigating-odsp-appeals" class="text-decoration-none">
+                  <div class="card h-100 border-primary">
+                    <div class="card-body">
+                      <h3 class="h6 card-title text-primary mb-2">
+                        <i class="bi bi-file-earmark-text me-2"></i>
+                        Appeals Process
+                      </h3>
+                      <p class="card-text small mb-0">How to appeal ODSP decisions and tribunal procedures</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-6">
+                <a href="/services" class="text-decoration-none">
+                  <div class="card h-100 border-primary">
+                    <div class="card-body">
+                      <h3 class="h6 card-title text-primary mb-2">
+                        <i class="bi bi-grid-3x3-gap me-2"></i>
+                        All Services
+                      </h3>
+                      <p class="card-text small mb-0">Browse all ODSP services and resources</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Search Tips -->
+          <div class="mt-5">
+            <h2 class="h5 mb-3">Search Tips</h2>
+            <div class="card">
+              <div class="card-body">
+                <ul class="mb-0">
+                  <li class="mb-2">
+                    <strong>Specific keywords work best:</strong> Try "eligibility requirements" or "payment dates"
+                  </li>
+                  <li class="mb-2">
+                    <strong>Search by topic:</strong> "application process", "medical review", or "appeal tribunal"
+                  </li>
+                  <li class="mb-2">
+                    <strong>Instant results:</strong> Results appear as you type - no need to press Enter
+                  </li>
+                  <li class="mb-0">
+                    <strong>Quick navigation:</strong> Click any result to jump directly to that page
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <!-- About Search -->
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">About Search</h3>
+              <p class="card-text small">Our search feature helps you quickly find ODSP information across all pages, blog posts, and resources. Results are instant and ranked by relevance.</p>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">Quick Links</h3>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2">
+                  <a href="/blog" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    Browse All Articles
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/services" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    ODSP Services
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/about" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    About ODSP Info
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/contact" class="text-decoration-none">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Browse by Topic -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">Browse by Topic</h3>
+              <p class="small text-muted mb-3">Explore blog posts by category:</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="/blog/tags/eligibility" class="badge bg-primary text-decoration-none"> Eligibility </a>
+                <a href="/blog/tags/benefits" class="badge bg-primary text-decoration-none"> Benefits </a>
+                <a href="/blog/tags/application" class="badge bg-primary text-decoration-none"> Application </a>
+                <a href="/blog/tags/appeal" class="badge bg-primary text-decoration-none"> Appeals </a>
+                <a href="/blog/tags/rates" class="badge bg-primary text-decoration-none"> Rates </a>
+                <a href="/blog/tags/payments" class="badge bg-primary text-decoration-none"> Payments </a>
+              </div>
             </div>
           </div>
         </div>

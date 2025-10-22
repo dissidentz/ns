@@ -4,7 +4,7 @@ description: "Updated ODSP payment rates and benefit amounts for 2025, including
 pubDate: 2025-10-01
 author: "ODSP Info Team"
 tags: ["rates", "benefits", "2025", "payments"]
-image: "/images/blog/payments.jpg"
+image: "/images/blog/payments.png"
 ---
 
 ## ODSP Monthly Payment Rates - 2025
